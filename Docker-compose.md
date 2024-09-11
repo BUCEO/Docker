@@ -1,7 +1,7 @@
-Archivo docker-compose.yml para un entorno con un servidor MySQL y un servidor de monitoreo, usando Prometheus y Grafana para monitoreo. 
-Este ejemplo levanta los contenedores necesarios y configura las redes entre ellos.
-
-------------------------------------------docker-compose.yml-----------------------------------------------
+Docker Compose para MySQL y Servidor de Monitoreo (Prometheus + Grafana)
+Archivo docker-compose.yml
+yaml
+Copy code
 version: '3.8'
 
 services:
@@ -46,31 +46,13 @@ volumes:
 networks:
   monitoring_net:
     driver: bridge
-
-------------------------------------------docker-compose.yml-----------------------------------------------
-
 Descripción de los Servicios
-mysql:
-
-Usa la imagen oficial de MySQL 8.0.
-Define variables de entorno para configurar el usuario y las credenciales.
-El puerto 3306 está mapeado para acceder a MySQL desde el host.
-Usa un volumen para persistir los datos de la base de datos en mysql_data.
-prometheus:
-
-Prometheus se usa para recolectar métricas.
-Mapea el puerto 9090 para la interfaz web de Prometheus.
-Espera un archivo de configuración prometheus.yml en el directorio actual.
-grafana:
-
-Grafana es la interfaz para visualizar los datos monitoreados.
-El puerto 3000 está mapeado para acceder a la interfaz de Grafana.
-La contraseña de administrador de Grafana está configurada en la variable de entorno GF_SECURITY_ADMIN_PASSWORD.
+MySQL: Servidor de base de datos MySQL con volúmenes persistentes y variables de entorno configuradas.
+Prometheus: Sistema de monitoreo que recolecta métricas de los servicios.
+Grafana: Herramienta de visualización de métricas para acceder a los datos monitorizados.
 Archivo prometheus.yml
-Para que Prometheus monitoree MySQL y otros servicios, debes crear un archivo prometheus.yml en el mismo directorio donde está el docker-compose.yml:
-
-
------------------------------------prometheus.yml -----------------------------
+yaml
+Copy code
 global:
   scrape_interval: 15s
 
@@ -82,13 +64,14 @@ scrape_configs:
   - job_name: 'mysql'
     static_configs:
       - targets: ['mysql-server:3306']
-
------------------------------------prometheus.yml -----------------------------
-Cómo levantar los servicios
+Comandos para Ejecutar los Servicios
 Guarda ambos archivos en el mismo directorio.
 
-Ejecuta el siguiente comando para levantar los servicios:
+Levanta los servicios con el siguiente comando:
 
 bash
+Copy code
 docker-compose up -d
-Esto iniciará los contenedores de MySQL, Prometheus y Grafana, conectados en la misma red para que puedan comunicarse entre ellos.
+Este comando iniciará los contenedores de MySQL, Prometheus y Grafana, conectados en la misma red para monitoreo.
+
+Con este archivo puedes levantar tu servidor MySQL y un sistema de monitoreo con Prometheus y Grafana.
