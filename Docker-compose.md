@@ -1,8 +1,7 @@
-archivo docker-compose.yml para un entorno con un servidor MySQL y un servidor de monitoreo, usando Prometheus y Grafana para monitoreo. Este ejemplo levanta los contenedores necesarios y configura las redes entre ellos.
+Archivo docker-compose.yml para un entorno con un servidor MySQL y un servidor de monitoreo, usando Prometheus y Grafana para monitoreo. 
+Este ejemplo levanta los contenedores necesarios y configura las redes entre ellos.
 
-docker-compose.yml
-yaml
-Copy code
+------------------------------------------docker-compose.yml-----------------------------------------------
 version: '3.8'
 
 services:
@@ -47,6 +46,9 @@ volumes:
 networks:
   monitoring_net:
     driver: bridge
+
+------------------------------------------docker-compose.yml-----------------------------------------------
+
 Descripción de los Servicios
 mysql:
 
@@ -67,8 +69,8 @@ La contraseña de administrador de Grafana está configurada en la variable de e
 Archivo prometheus.yml
 Para que Prometheus monitoree MySQL y otros servicios, debes crear un archivo prometheus.yml en el mismo directorio donde está el docker-compose.yml:
 
-yaml
-Copy code
+
+-----------------------------------prometheus.yml -----------------------------
 global:
   scrape_interval: 15s
 
@@ -80,12 +82,13 @@ scrape_configs:
   - job_name: 'mysql'
     static_configs:
       - targets: ['mysql-server:3306']
+
+-----------------------------------prometheus.yml -----------------------------
 Cómo levantar los servicios
 Guarda ambos archivos en el mismo directorio.
 
 Ejecuta el siguiente comando para levantar los servicios:
 
 bash
-Copy code
 docker-compose up -d
 Esto iniciará los contenedores de MySQL, Prometheus y Grafana, conectados en la misma red para que puedan comunicarse entre ellos.
