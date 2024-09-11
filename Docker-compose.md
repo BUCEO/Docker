@@ -1,4 +1,4 @@
-Docker Compose para MySQL y Servidor de Monitoreo (Prometheus + Grafana)
+# Docker Compose para MySQL y Servidor de Monitoreo (Prometheus + Grafana)
 Archivo docker-compose.yml
 version: '3.8'
 
@@ -45,11 +45,11 @@ networks:
   monitoring_net:
     driver: bridge
 
-Descripción de los Servicios
-MySQL: Servidor de base de datos MySQL con volúmenes persistentes y variables de entorno configuradas.
-Prometheus: Sistema de monitoreo que recolecta métricas de los servicios.
-Grafana: Herramienta de visualización de métricas para acceder a los datos monitorizados.
-Archivo prometheus.yml
+#Descripción de los Servicios
+  MySQL: Servidor de base de datos MySQL con volúmenes persistentes y variables de entorno configuradas.
+  Prometheus: Sistema de monitoreo que recolecta métricas de los servicios.
+  Grafana: Herramienta de visualización de métricas para acceder a los datos monitorizados.
+#Archivo prometheus.yml
 global:
   scrape_interval: 15s
 
@@ -62,11 +62,10 @@ scrape_configs:
     static_configs:
       - targets: ['mysql-server:3306']
 
-Comandos para Ejecutar los Servicios
+#Comandos para Ejecutar los Servicios
 Guarda ambos archivos en el mismo directorio.
 Levanta los servicios con el siguiente comando:
-bash
-Copy code
+
 docker-compose up -d
 
 
