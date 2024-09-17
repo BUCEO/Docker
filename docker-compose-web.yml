@@ -1,0 +1,41 @@
+# Docker Compose para MySQL y Servidor de Monitoreo (Prometheus + Grafana)
+Archivo docker-compose.yml
+version: '3.8'
+
+services:
+  php:
+     build: ./php
+     restart: unless-stopped
+     container_name: docker.php
+     tty: true
+     depends_on:
+          - db-mysql
+     volumes:
+          - .src:/var/lib/mysql
+          
+  web:
+    image: httpd
+    restart: unless-stopped
+    container_name: web-apache
+    tty: true
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    volumes:
+      - .src:/usr/local/htdocs
+
+  db: 
+    image: mysql:8.0
+    container_name: db-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: example_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
