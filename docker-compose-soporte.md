@@ -3,9 +3,9 @@ Archivo docker-compose.yml
 version: '3.8'
 
 services:
-  mysql:
+  db: 
     image: mysql:8.0
-    container_name: mysql-server
+    container_name: db-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: example_db
