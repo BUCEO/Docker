@@ -1,24 +1,12 @@
 ﻿# Ejecutar Docker en WSL2 en solo 5 minutes (via systemd, sin Docker Desktop!)
+wsl --install Ubuntu-22.04
 
 # Asegurarse que /etc/wsl.conf tenga el siguiente contenido
 
 [boot]
 systemd=true
 
-
-#Reiniciar WSL
-
-wsl --shutdown
-wsl --distribution Ubuntu-22.04
-
-
-#Install docker-cli - see my guide
-Log back into WSL > Profit 💫
-
-wsl --install Ubuntu-22.04
-
-
-#Configurar WSL ( "Ubuntu-22.04" ):
+# Configurar WSL ( "Ubuntu-22.04" ):
 
 # Abrir  "Ubuntu-22.04"
 wsl --distribution Ubuntu-22.04
@@ -34,7 +22,7 @@ EOT
 exit
 
 
-#Reiniciar WSL:
+# Reiniciar WSL:
 
 wsl --shutdown
 wsl --distribution Ubuntu-22.04
@@ -45,7 +33,7 @@ wsl --distribution Ubuntu-22.04
 systemctl --no-pager status user.slice > /dev/null 2>&1 && echo 'OK: Systemd is running' || echo 'FAIL: Systemd not running'
 
 
-#INSTALAR docker-ce (cmds from my post):
+# INSTALAR docker-ce :
 
 ## Instalar  Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -55,7 +43,7 @@ echo \
 sudo apt update
 sudo apt install -y docker-ce docker-compose-plugin
 
-# Agregar un link simbolico  docker-compose
+## Agregar un link simbolico  docker-compose
 sudo ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
 
 # Agregar al usuario el grupo de  docker 
