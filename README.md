@@ -1,39 +1,29 @@
-﻿# Docker
-Run Docker in WSL2 in 5 minutes (via systemd, without Docker Desktop!)
-#docker#wsl2
-Now WSL2 has systemd support, we can run Docker in WSL without Docker desktop!
-TL;DR
-Ensure /etc/wsl.conf has
+﻿# Ejecutar Docker en WSL2 en solo 5 minutes (via systemd, sin Docker Desktop!)
+
+# Asegurarse que /etc/wsl.conf tenga el siguiente contenido
 
 [boot]
 systemd=true
 
 
-Restart WSL
+#Reiniciar WSL
 
 wsl --shutdown
-wsl --distribution Ubuntu
+wsl --distribution Ubuntu-22.04
 
 
-Install docker-cli - see my guide
+#Install docker-cli - see my guide
 Log back into WSL > Profit 💫
-Complete Guide
-Ensure WSL is up-to-date:
 
-wsl --update
+wsl --install Ubuntu-22.04
 
 
-(Optional) Install + configure Ubuntu distro (if you haven't already):
+#Configurar WSL ( "Ubuntu-22.04" ):
 
-wsl --install Ubuntu
+# Abrir  "Ubuntu-22.04"
+wsl --distribution Ubuntu-22.04
 
-
-Configure WSL (assuming "Ubuntu" is your distro):
-
-# Open up "Ubuntu"
-wsl --distribution Ubuntu
-
-# Enable systemd via /etc/wsl.conf
+# Habilitar  systemd via /etc/wsl.conf
 {
 cat <<EOT
 [boot]
@@ -44,20 +34,20 @@ EOT
 exit
 
 
-Restart WSL:
+#Reiniciar WSL:
 
 wsl --shutdown
-wsl --distribution Ubuntu
+wsl --distribution Ubuntu-22.04
 
 
-Check systemd is running - You should see 'OK: Systemd is running' message:
+#Chequear que systemd este funcionando, deberia de tener el mensaje  'OK: Systemd is running' 
 
 systemctl --no-pager status user.slice > /dev/null 2>&1 && echo 'OK: Systemd is running' || echo 'FAIL: Systemd not running'
 
 
-Install docker-ce (cmds from my post):
+#INSTALAR docker-ce (cmds from my post):
 
-# Install Docker
+## Instalar  Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
@@ -65,21 +55,21 @@ echo \
 sudo apt update
 sudo apt install -y docker-ce docker-compose-plugin
 
-# Install docker-compose
+# Agregar un link simbolico  docker-compose
 sudo ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
 
-# Add yourself to the docker group
+# Agregar al usuario el grupo de  docker 
 sudo usermod -aG docker $USER
 
-# Exit bash - this is important!!!
+# Es importante !!!! Salir del bash - 
 exit
 
+Volver a iniciar (Tambien es imporante):
 
-Re-login (this is important!):
-
-wsl --distribution Ubuntu
+wsl --distribution Ubuntu-22.04
 
 
-You can now run docker-cli without Docker Desktop 🙂:
+Ahora tu puedes ejecutar Docker sin necesidad de utilizar  Docker Desktop 🙂:
 
+Pruebalo
 docker run --rm -it hello-world
