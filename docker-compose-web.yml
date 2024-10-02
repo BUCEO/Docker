@@ -1,4 +1,4 @@
-# Docker Compose para MySQL y Servidor de Monitoreo (Apache + ¨PHP)
+# Docker Compose para MySQL y Servidor de Monitoreo (Apache + ï¿½PHP)
 #Archivo docker-compose.yml
 version: '3.8'
 
