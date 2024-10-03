@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - APP_ENV=development  # Cambiar a production para producción
+        - APP_ENV=development  # Cambiar a production para produccion
     container_name: php_apache_container
     ports:
       - "8080:80"    # Mapea puerto 80 del contenedor al 8080 del host
@@ -34,7 +34,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3306:3306"  # Exponer puerto MySQL para conexión externa
+      - "3306:3306"  # Exponer puerto MySQL para conexion externa
     volumes:
       - mysql_data:/var/lib/mysql  # Volumen persistente para datos
     networks:
