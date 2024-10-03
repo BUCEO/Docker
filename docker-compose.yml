@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - APP_ENV=development  # Cambiar a production para producción
+    container_name: php_apache_container
+    ports:
+      - "8080:80"    # Mapea puerto 80 del contenedor al 8080 del host
+      - "8443:443"   # Mapea puerto 443 del contenedor al 8443 del host
+    volumes:
+      - ./src:/var/www/html   # Código fuente PHP
+      - ./public:/var/www/html/public  # Archivos HTML, CSS, JS
+    networks:
+      - backend
+      - frontend
+    environment:
+      MYSQL_HOST: mysql        # Nombre del servicio de MySQL
+      MYSQL_DATABASE: pasantias
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: pasantias
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"  # Exponer puerto MySQL para conexión externa
+    volumes:
+      - mysql_data:/var/lib/mysql  # Volumen persistente para datos
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
+
+volumes:
+  mysql_data:
+    driver: local
