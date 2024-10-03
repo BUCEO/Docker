@@ -1,0 +1,19 @@
+[PHP]
+display_errors = On
+display_startup_errors = On
+error_reporting = E_ALL
+log_errors = On
+memory_limit = 256M
+post_max_size = 20M
+upload_max_filesize = 20M
+max_execution_time = 300
+date.timezone = "UTC"
+
+[Session]
+session.save_handler = files
+session.save_path = "/var/lib/php/sessions"
+session.gc_maxlifetime = 1440
+session.cookie_secure = Off
+
+[opcache]
+opcache.enable=0

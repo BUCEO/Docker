@@ -1,26 +1,28 @@
-# Dockerfile para PHP-FPM con Apache
+# Usar la imagen base de PHP-FPM con Alpine
 FROM php:8.3.4-fpm-alpine3.19
 
-# Instalar extensiones necesarias (mysqli, zip y otras)
-RUN docker-php-ext-install mysqli
+# Instalar dependencias de sistema
+RUN apk --no-cache add apache2 apache2-ssl openssl bash
 
-# Copiar configuraciones de PHP y Apache
-COPY ./php.ini /usr/local/etc/php/php.ini
-COPY ./apache.conf /etc/apache2/sites-available/000-default.conf
+# Instalar extensiones de PHP necesarias, incluyendo mysqli
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Instalar apache2 y otras dependencias
-RUN apk add --no-cache apache2 apache2-ssl
+# Copiar configuraciones personalizadas de PHP y Apache
+COPY ./php.ini-development /usr/local/etc/php/php.ini
+COPY ./apache2.conf /etc/apache2/apache2.conf
 
-# Agregar un script SQL para inicialización de base de datos
-COPY ./init-db.sh /docker-entrypoint-initdb.d/
-COPY ./init.sql /docker-entrypoint-initdb.d/
+# Configuración para usar PHP-FPM con Apache
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN ln -s /etc/apache2/mods-available/proxy_fcgi.load /etc/apache2/mods-enabled/
+RUN ln -s /etc/apache2/mods-available/setenvif.load /etc/apache2/mods-enabled/
+RUN ln -s /etc/apache2/mods-available/actions.load /etc/apache2/mods-enabled/
 
-# Asignar los permisos necesarios al script
-RUN chmod +x /docker-entrypoint-initdb.d/init-db.sh
+# Crear directorios requeridos y permisos
+RUN mkdir -p /var/www/html/public
+RUN chown -R www-data:www-data /var/www/html
 
-# Exponer puertos 80 (HTTP) y 443 (HTTPS)
-EXPOSE 80 443
+# Exponer el puerto 80 para Apache
+EXPOSE 80
 
-# Definir el comando de inicio (entrypoint)
-ENTRYPOINT ["/docker-entrypoint-initdb.d/init-db.sh"]
-CMD ["apachectl", "-D", "FOREGROUND"]
+# Comando por defecto para iniciar Apache y PHP-FPM
+CMD ["sh", "-c", "php-fpm -D && apachectl -D FOREGROUND"]
