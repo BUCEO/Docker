@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   php-apache:
     build:
@@ -24,7 +23,6 @@ services:
       MYSQL_PASSWORD: password
     depends_on:
       - mysql
-
   mysql:
     image: mysql:8.0
     container_name: mysql_container
@@ -39,11 +37,10 @@ services:
       - mysql_data:/var/lib/mysql  # Volumen persistente para datos
     networks:
       - backend
-
 networks:
   frontend:
   backend:
-
 volumes:
   mysql_data:
-    driver: local
+  driver: local
+
