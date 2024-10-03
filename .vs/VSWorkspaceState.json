@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\Juan\\Source\\Repos\\Docker",
+  "SelectedNode": "\\Dockerfile",
   "PreviewInSolutionExplorer": false
 }
