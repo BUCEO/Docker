@@ -42,5 +42,4 @@ networks:
   backend:
 volumes:
   mysql_data:
-  driver: local
-
+   driver: local
