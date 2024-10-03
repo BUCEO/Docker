@@ -11,7 +11,7 @@ services:
      depends_on:
           - db-mysql
      volumes:
-          - .src:/var/lib/mysql
+          - .src:/usr/local/htdocs
           
   web:
     image: httpd
