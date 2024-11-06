@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\php",
+    "\\public",
+    "\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\Juan\\Source\\Repos\\BUCEO\\Docker",
+  "SelectedNode": "\\docker-compose-web.yml",
   "PreviewInSolutionExplorer": false
 }
