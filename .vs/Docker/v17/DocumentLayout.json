@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Juan\\source\\repos\\Docker\\",
+  "WorkspaceRootPath": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\Docker\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\Docker\\Dockerfile||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dockerfile||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\Source\\Repos\\Docker\\Dockerfile-simple||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dockerfile-simple||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\Docker\\php.ini-production||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:php.ini-production||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\Docker\\apache2.conf||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:apache2.conf||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\Docker\\init-db.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\init-db.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:init-db.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\Docker\\src\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\Dockerfile-simple||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dockerfile-simple||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\Dockerfile||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Dockerfile||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\php.ini-production||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:php.ini-production||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\apache2.conf||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:apache2.conf||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\src\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\index.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,24 +102,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\Dockerfile",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\Dockerfile",
               "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-03T00:44:13.017Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T00:44:13.017Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "php.ini-production",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\php.ini-production",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\php.ini-production",
               "RelativeDocumentMoniker": "php.ini-production",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\php.ini-production",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\php.ini-production",
               "RelativeToolTip": "php.ini-production",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -127,11 +126,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "apache2.conf",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\apache2.conf",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\apache2.conf",
               "RelativeDocumentMoniker": "apache2.conf",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\apache2.conf",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\apache2.conf",
               "RelativeToolTip": "apache2.conf",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -139,48 +138,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\docker-compose.yml",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-10-03T00:26:18.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T00:26:18.503Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Dockerfile-simple",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\Dockerfile-simple",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\Dockerfile-simple",
               "RelativeDocumentMoniker": "Dockerfile-simple",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\Dockerfile-simple",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\Dockerfile-simple",
               "RelativeToolTip": "Dockerfile-simple",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-10-03T00:24:03.686Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "init-db.sh",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\init-db.sh",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\init-db.sh",
               "RelativeDocumentMoniker": "init-db.sh",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\init-db.sh",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\init-db.sh",
               "RelativeToolTip": "init-db.sh",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-03T00:21:25.893Z"
+              "WhenOpened": "2024-10-03T00:21:25.893Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "index.php",
-              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\Docker\\src\\index.php",
+              "DocumentMoniker": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\src\\index.php",
               "RelativeDocumentMoniker": "src\\index.php",
-              "ToolTip": "C:\\Users\\Juan\\source\\repos\\Docker\\src\\index.php",
+              "ToolTip": "C:\\Users\\Juan\\source\\repos\\BUCEO\\Docker\\src\\index.php",
               "RelativeToolTip": "src\\index.php",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
