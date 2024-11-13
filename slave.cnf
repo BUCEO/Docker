@@ -6,9 +6,8 @@ datadir=/var/lib/mysql
 socket=/var/run/mysqld/mysqld.sock
 secure-file-priv=/var/lib/mysql-files
 user=mysql
-server-id=1
-log_bin= 1
-binlog_format=ROW
+server-id=2
+log_bin = 1
 binlog_do_db=my_db
 pid-file=/var/run/mysqld/mysqld.pid
 [client]

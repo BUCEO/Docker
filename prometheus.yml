@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['web:80', 'mysql_master:3306', 'mysql_slave:3306', 'nfs_server:2049']

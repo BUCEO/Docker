@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\php",
-    "\\public",
-    "\\src"
+    ""
   ],
-  "SelectedNode": "\\docker-compose-web.yml",
+  "SelectedNode": "\\setup_db.sh",
   "PreviewInSolutionExplorer": false
 }

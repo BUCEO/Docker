@@ -14,6 +14,7 @@ services:
       - "3306:3306"
     volumes:
       - mysql_master_data:/var/lib/mysql
+      - ./config/mysql/master.cnf:/etc/my.cnf 
     networks:
       - backend
     env_file:
@@ -32,6 +33,7 @@ services:
       - mysql_master
     volumes:
       - mysql_slave_data:/var/lib/mysql
+      - ./config/mysql/slave.cnf:/etc/my.cnf 
     networks:
       - backend
     env_file:
@@ -42,6 +44,7 @@ services:
     image: php:8.0-apache
     volumes:
       - ./src:/var/www/html
+      - ./public:/var/www/html/public
     ports:
       - "80:80"
     networks:
@@ -81,19 +84,6 @@ services:
       - prometheus
     networks:
       - monitoring
-
-  # Rsync backup job
-  rsync_backup:
-    image: bitnami/rsync
-    volumes:
-      - ./backups:/backups
-      - mysql_master_data:/data/mysql_master
-      - mysql_slave_data:/data/mysql_slave
-    command: >
-      sh -c "crontab -l | { cat; echo '0 3 * * * rsync -avz /data/mysql_master/ /backups/mysql_master/';
-      echo '0 3 * * * rsync -avz /data/mysql_slave/ /backups/mysql_slave/'; } | crontab - && crond -f"
-    networks:
-      - backend
 
 networks:
   backend:
