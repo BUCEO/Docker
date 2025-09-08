@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile.dev
+    container_name: laravel_app_dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+    environment:
+      - APP_ENV=development
+      - APP_DEBUG=true
+    networks:
+      - laravel_network
+
+  webserver:
+    image: nginx:alpine
+    container_name: nginx_server_dev
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/nginx.dev.conf:/etc/nginx/nginx.conf
+    networks:
+      - laravel_network
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db_dev
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-laravel}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-secret}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-secret}
+      MYSQL_USER: ${DB_USERNAME:-laravel}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data_dev:/var/lib/mysql
+    networks:
+      - laravel_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_dev
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 0
+    ports:
+      - "8080:80"
+    networks:
+      - laravel_network
+
+  redis:
+    image: redis:alpine
+    container_name: redis_cache_dev
+    ports:
+      - "6379:6379"
+    networks:
+      - laravel_network
+
+volumes:
+  mysql_data_dev:
+    driver: local
+
+networks:
+  laravel_network:
+    driver: bridge
