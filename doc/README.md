@@ -1,4 +1,4 @@
-# 📚 ÍNDICE COMPLETO DEL BOILERPLATE
+# 📚 ÍNDICE COMPLETO DEL REPOSITORIO
 ## Docker PHP MySQL con SSH - Ambiente Profesional de Desarrollo
 
 ---
@@ -6,7 +6,7 @@
 ## 📁 ESTRUCTURA DE ARCHIVOS
 
 ```
-docker-php-mysql-boilerplate/
+docker/
 │
 ├── 🚀 SCRIPTS EJECUTABLES
 │   ├── setup-docker-php-mysql.sh    → Script principal de instalación
@@ -19,7 +19,8 @@ docker-php-mysql-boilerplate/
 │
 ├── 📚 DOCUMENTACIÓN TÉCNICA
 │   ├── DOCUMENTACION_TECNICA.md     → Arquitectura y detalles técnicos
-│   ├── EJEMPLOS_USO.md              → Casos de uso y ejemplos prácticos
+│   ├── EJEMPLOS_USO.md              → Casos de uso y ejem plos prácticos
+│   ├─  WSL.md                 → Instalación en WSL
 │   └── CHECKLIST.md                 → Checklist completo de setup
 │
 └── 🎨 RECURSOS VISUALES
@@ -401,7 +402,7 @@ Genera:
 
 ---
 
-## 📞 SOPORTE Y RECURSOS
+## RECURSOS
 
 ### Obtener Ayuda
 
@@ -482,7 +483,7 @@ Este boilerplate te proporciona:
 
 ---
 
-**Creado con ❤️ para la comunidad de desarrolladores PHP**
+**Creado con ❤️ para la comunidad**
 
 **Última actualización:** 2025-10-24  
 **Versión:** 2.0.0

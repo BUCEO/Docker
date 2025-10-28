@@ -1,7 +1,7 @@
 [mysqld]
-complemento_de_autenticación_predeterminado=contraseña_nativa_mysql 
-omitir_caché_de_host 
-omitir_resolución_de_nombre 
+complemento_de_autenticacion_predeterminado=contraseÃ±a_nativa_mysql 
+omitir_cache_de_host 
+omitir_resolucion_de_nombre 
 datadir=/var/lib/mysql 
 socket=/var/run/mysqld/mysqld.sock 
 priv_de_archivo_seguro=/var/lib/archivos_mysql 
