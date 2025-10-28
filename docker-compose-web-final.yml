@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  # MySQL Master
+  mysql_master:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      REPLICATION_ROLE: master
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_master_data:/var/lib/mysql
+      - ./config/mysql/master.cnf:/etc/my.cnf 
+    networks:
+      - backend
+    env_file:
+      - .env.${ENVIRONMENT}  # Se configura según el entorno
+
+  # MySQL Slave
+  mysql_slave:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      REPLICATION_ROLE: slave
+    depends_on:
+      - mysql_master
+    volumes:
+      - mysql_slave_data:/var/lib/mysql
+      - ./config/mysql/slave.cnf:/etc/my.cnf 
+    networks:
+      - backend
+    env_file:
+      - .env.${ENVIRONMENT}  # Se configura según el entorno
+
+  # PHP & Apache
+  web:
+    image: php:8.0-apache
+    volumes:
+      - ./src:/var/www/html
+      - ./public:/var/www/html/public
+    ports:
+      - "80:80"
+    networks:
+      - backend
+      - frontend
+
+  # NFS Server for Backups
+  nfs_server:
+    image: itsthenetwork/nfs-server-alpine
+    environment:
+      - SHARED_DIRECTORY=/exports
+    volumes:
+      - nfs_data:/exports
+    ports:
+      - "2049:2049"
+    networks:
+      - backend
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+
+  # Grafana
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring
+
+networks:
+  backend:
+  frontend:
+  monitoring:
+
+volumes:
+  mysql_master_data:
+  mysql_slave_data:
+  nfs_data:
+  grafana_data:

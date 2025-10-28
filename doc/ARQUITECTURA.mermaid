@@ -1,0 +1,78 @@
+graph TB
+    subgraph "HOST MACHINE"
+        subgraph "Docker Network - 172.20.0.0/16"
+            
+            Client[👤 Cliente<br/>Browser/API Client]
+            
+            subgraph "Web Layer"
+                Nginx[🌐 Nginx<br/>Alpine<br/>Port: 80/443]
+            end
+            
+            subgraph "Application Layer"
+                PHP[⚙️ PHP-FPM 8.3<br/>Alpine<br/>Port: 9000<br/>+ Xdebug<br/>+ Composer]
+            end
+            
+            subgraph "Data Layer"
+                MySQL[🗄️ MySQL 8.0<br/>Port: 3306]
+                Redis[💾 Redis 7<br/>Port: 6379<br/>opcional]
+            end
+            
+            subgraph "Tools opcional"
+                PHPMyAdmin[🔧 PHPMyAdmin<br/>Port: 8081]
+            end
+            
+        end
+        
+        subgraph "Volumes"
+            SrcVol[📁 ./src<br/>Código Fuente]
+            LogsVol[📊 ./logs<br/>Logs]
+            MySQLVol[💾 mysql_data<br/>Datos DB]
+            RedisVol[💾 redis_data<br/>Cache]
+        end
+        
+        subgraph "Configuration Files"
+            DockerCompose[📄 docker-compose.yml]
+            EnvFile[🔐 .env]
+            DockerConfigs[⚙️ docker/configs]
+        end
+        
+    end
+    
+    Client -->|HTTP Request :8080| Nginx
+    Nginx -->|FastCGI :9000| PHP
+    PHP -->|PDO/MySQLi :3306| MySQL
+    PHP -->|Redis Client :6379| Redis
+    PHPMyAdmin -->|:3306| MySQL
+    
+    PHP -.->|Read/Write| SrcVol
+    PHP -.->|Write| LogsVol
+    Nginx -.->|Write| LogsVol
+    MySQL -.->|Persist| MySQLVol
+    MySQL -.->|Write| LogsVol
+    Redis -.->|Persist| RedisVol
+    
+    DockerCompose -.->|Orchestrate| Nginx
+    DockerCompose -.->|Orchestrate| PHP
+    DockerCompose -.->|Orchestrate| MySQL
+    DockerCompose -.->|Orchestrate| Redis
+    
+    EnvFile -.->|Configure| DockerCompose
+    DockerConfigs -.->|Configure| Nginx
+    DockerConfigs -.->|Configure| PHP
+    DockerConfigs -.->|Configure| MySQL
+    
+    style Client fill:#E3F2FD,stroke:#1976D2,stroke-width:2px
+    style Nginx fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    style PHP fill:#8E44AD,stroke:#6C3483,stroke-width:2px,color:#fff
+    style MySQL fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    style Redis fill:#DC143C,stroke:#8B0000,stroke-width:2px,color:#fff
+    style PHPMyAdmin fill:#607D8B,stroke:#37474F,stroke-width:2px,color:#fff
+    
+    style SrcVol fill:#FFF3E0,stroke:#F57C00,stroke-width:2px
+    style LogsVol fill:#E8F5E9,stroke:#388E3C,stroke-width:2px
+    style MySQLVol fill:#FCE4EC,stroke:#C2185B,stroke-width:2px
+    style RedisVol fill:#F3E5F5,stroke:#7B1FA2,stroke-width:2px
+    
+    style DockerCompose fill:#E1F5FE,stroke:#0277BD,stroke-width:2px
+    style EnvFile fill:#FFEBEE,stroke:#C62828,stroke-width:2px
+    style DockerConfigs fill:#F1F8E9,stroke:#558B2F,stroke-width:2px
