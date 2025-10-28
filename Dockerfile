@@ -11,7 +11,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 COPY ./php.ini-development /usr/local/etc/php/php.ini
 COPY ./apache2.conf /etc/apache2/apache2.conf
 
-# Configuración para usar PHP-FPM con Apache
+# ConfiguraciÃ³n para usar PHP-FPM con Apache
 RUN mkdir -p /etc/apache2/mods-enabled/
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
